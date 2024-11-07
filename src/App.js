@@ -1,8 +1,12 @@
+import './index.css';
+import { TipCalculator } from "./TipCalculator";
 
 export default function App() {
   return(
-    <div>
-      Here
+    <div className='container'>
+      <TipCalculator></TipCalculator>
     </div>
   )
 }
+
+
