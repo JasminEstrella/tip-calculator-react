@@ -2,6 +2,7 @@ import { useState } from "react";
 import Bill from "./Bill";
 import Output from "./Output";
 import ServiceTip from "./ServiceTip";
+import Reset from "./Reset";
 
 export function TipCalculator() {
 
@@ -9,7 +10,7 @@ export function TipCalculator() {
   const [tip1, setTip1] = useState(0);
   const [tip2, setTip2] = useState(0);
 
-  const totalTips = bill * ((tip1 + tip2) / 2) / 100;
+  const totalTips = (bill * ((tip1 + tip2) / 2)) / 100;
 
   function onReset() {
     setBill('');
@@ -26,10 +27,9 @@ export function TipCalculator() {
       {bill > 0 && (
         <>
           <Output bill={bill} tips={totalTips}></Output>
-          <button onClick={() => onReset()}>Reset</button>
+          <Reset onReset={onReset} />
         </>
       )}
-
     </div>
   );
 }
